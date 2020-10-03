@@ -1,0 +1,39 @@
+
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+   // id 'java-library'
+    id 'application'
+    id 'eclipse-wtp'
+    //id 'java'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+sourceCompatibility="13"
+targetCompatibility="13"
+sourceSets{
+ main{
+  resources{
+    srcDirs=["src/main/java"]
+    includes=["**/*.xml"]
+  }
+ }
+}
+mainClassName="com.my.test.RealtimeDITest"
+run {
+    standardInput = System.in
+}
+
+dependencies {
+   
+
+// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+compile group: 'org.springframework', name: 'spring-context-support', version: '5.2.9.RELEASE'
+
+
+
+}
